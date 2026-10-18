@@ -1,0 +1,37 @@
+{
+  "record_kind": "Session verification summary; outcomes recorded from executed commands",
+  "python": "3.12.14",
+  "tests": {
+    "command": "PYTHONPATH=src python3 -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "passed": 60,
+    "breakdown": {
+      "core_cli_io": 31,
+      "exercise_runner": 11,
+      "workbook": 18
+    }
+  },
+  "wheel": {
+    "name": "radar_equity_replay_lab-0.2.0-py3-none-any.whl",
+    "sha256": "5e30b388b6e05857eb4baf0f0e376f8fc68d7cc4bc560a143cf2bba355dcd43f",
+    "build_exit_code": 0,
+    "module_execution_exit_code": 0,
+    "generated_html_matches_source_run": true
+  },
+  "source_and_demo_sha256": {
+    "src/radar_equity_replay/core.py": "28e02469c6ee71d9005ab1438320cee7d33e336868f2effba7eae81faca067d7",
+    "src/radar_equity_replay/io.py": "e07ef2b788e4082ceb8c7cfe2c8209671af5864543d148666e0579149f08fdb2",
+    "src/radar_equity_replay/__main__.py": "b389e2327ecb273b5f22f80a90afea291fbd9bf44259128eeab0506085b34c6d",
+    "src/radar_equity_replay/workbook.py": "4de0413153051be3bf19dc1ec6f40760411b94fc2117485c9b8a8cb11ce24efb",
+    "tools/run_exercises.py": "79be6d07d57784efd4b3d00f9db5a254ec482b142806cd332a058b2ad87b231c",
+    "tests/test_replay.py": "6ca0a70b4384ba5f7454a4fca50f6df484e43b39b1641e429ed241cceab6f97a",
+    "tests/test_exercises.py": "203234ed90d253e35dc7856b92ea1a0e7f6ebeb227eb911318899d906ff26380",
+    "tests/test_workbook.py": "470dc5589a143f4eb1caee545760ac9e05de2ab76cd4e0eecd3ef821894a1f50",
+    "docs/demo/replay.html": "88f18694779cc412b6b5ed7941cb624cdacd4610d5a7cc3adfbe0376e50c9ff0",
+    "docs/demo/loss.html": "26b775b699a22a0cc7702d0d8307711d395c87f05eb2d1b0e1a53e1d5cec729e",
+    "docs/demo/cash.html": "fb9ea3a48aa4f335dba17bbd389b7c28b480b349bdaab4889896f856f1589874"
+  },
+  "browser_visual_keyboard_human_validation": "pending",
+  "review_status": "pending",
+  "execution_allowed": false
+}

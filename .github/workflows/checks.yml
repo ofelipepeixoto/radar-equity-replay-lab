@@ -5,7 +5,7 @@ permissions:
 jobs:
   replay:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 8
     strategy:
       matrix:
         python: ['3.11', '3.12']
@@ -27,3 +27,17 @@ jobs:
           python3 -m radar_equity_replay examples/replay.json --output /tmp/equity-replay.json
           python3 -m radar_equity_replay examples/loss.json --output /tmp/equity-loss.json
           python3 -m radar_equity_replay examples/cash.json --output /tmp/equity-cash.json
+      - name: Independent rational verification and refusal cases
+        env:
+          PYTHONPATH: src
+        run: python3 tools/run_exercises.py --output-dir /tmp/equity-exercises
+      - name: Reproduce offline workbooks without external resources
+        env:
+          PYTHONPATH: src
+        run: |
+          python3 -m radar_equity_replay.workbook examples/replay.json --output /tmp/replay.html
+          python3 -m radar_equity_replay.workbook examples/loss.json --output /tmp/loss.html
+          python3 -m radar_equity_replay.workbook examples/cash.json --output /tmp/cash.html
+          cmp /tmp/replay.html docs/demo/replay.html
+          cmp /tmp/loss.html docs/demo/loss.html
+          cmp /tmp/cash.html docs/demo/cash.html
