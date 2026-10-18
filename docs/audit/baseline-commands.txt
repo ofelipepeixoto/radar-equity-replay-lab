@@ -1,0 +1,23 @@
+SOURCE: <WORKSPACE>/ai-hedge-fund-upstream
+COMMIT: 78b779c1389e2d1452dc29606d2c4126d859b964
+
+python3 -m venv <WORKSPACE>/hedge-audit-venv
+<WORKSPACE>/hedge-audit-venv/bin/python -m pip install --require-hashes --only-binary=:all: --no-deps -r <WORKSPACE>/hedge-evidence/upstream-locked-requirements.txt
+<WORKSPACE>/hedge-audit-venv/bin/python -m pip check
+
+env -i PATH=<WORKSPACE>/hedge-audit-venv/bin:/usr/bin:/bin HOME=<WORKSPACE>/hedge-evidence/isolated-home LANG=C.UTF-8 LC_ALL=C.UTF-8 PYTHONPATH=<WORKSPACE>/hedge-evidence/offline-guard:<WORKSPACE>/ai-hedge-fund-upstream MPLBACKEND=Agg PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 LANGCHAIN_TRACING_V2=false DO_NOT_TRACK=1 <WORKSPACE>/hedge-audit-venv/bin/python -m pytest hedge_fund/ -q --junitxml=<WORKSPACE>/hedge-evidence/upstream-junit.xml
+
+<WORKSPACE>/hedge-audit-venv/bin/python -m black --check hedge_fund
+<WORKSPACE>/hedge-audit-venv/bin/python -m isort --check-only hedge_fund
+<WORKSPACE>/hedge-audit-venv/bin/python -m flake8 hedge_fund --count --statistics
+
+<WORKSPACE>/hedge-audit-venv/bin/python -m pip install --only-binary=:all: 'poetry-core==1.9.1' 'build==1.5.0'
+env -i PATH=<WORKSPACE>/hedge-audit-venv/bin:/usr/bin:/bin HOME=<WORKSPACE>/hedge-evidence/isolated-home LANG=C.UTF-8 PYTHONPATH=<WORKSPACE>/hedge-evidence/offline-guard <WORKSPACE>/hedge-audit-venv/bin/python -m build --no-isolation --outdir <WORKSPACE>/hedge-evidence/upstream-dist
+
+env -i PATH=<WORKSPACE>/hedge-audit-venv/bin:/usr/bin:/bin HOME=<WORKSPACE>/hedge-evidence/isolated-home LANG=C.UTF-8 PYTHONPATH=<WORKSPACE>/hedge-evidence/offline-guard:<WORKSPACE>/ai-hedge-fund-upstream <WORKSPACE>/hedge-audit-venv/bin/python <WORKSPACE>/hedge-evidence/reproduce_backtest_limits.py
+
+python3 -m venv <WORKSPACE>/hedge-dependency-venv
+<WORKSPACE>/hedge-dependency-venv/bin/python -m pip install --only-binary=:all: 'pip-audit==2.10.1'
+<WORKSPACE>/hedge-dependency-venv/bin/python -m pip_audit --disable-pip --no-deps --require-hashes -r <WORKSPACE>/hedge-evidence/upstream-locked-requirements.txt --format json --output <WORKSPACE>/hedge-evidence/upstream-dependency-audit.json
+
+EXIT CODES: install 0; pip-check 0; pytest 0; black 1; isort 1; flake8 1; build 0; two synthetic observations 0; advisory query 1 (alerts found).

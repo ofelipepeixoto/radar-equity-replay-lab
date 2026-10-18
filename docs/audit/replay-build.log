@@ -1,0 +1,9 @@
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: radar-equity-replay-lab
+  Building wheel for radar-equity-replay-lab (pyproject.toml): started
+  Building wheel for radar-equity-replay-lab (pyproject.toml): finished with status 'done'
+  Created wheel for radar-equity-replay-lab: filename=radar_equity_replay_lab-0.1.0-py3-none-any.whl size=8499 sha256=10fb3d6c04b30ea6dacf000fb6b555c088cded3e3f733f1cbdb530b2e3243de8
+  Stored in directory: /tmp/pip-ephem-wheel-cache-4pfp___d/wheels/97/10/f1/ba2b591988f711eff76da83b780f90632256853d48b28f67ad
+Successfully built radar-equity-replay-lab

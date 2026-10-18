@@ -1,0 +1,426 @@
+{
+  "observed_on": "2026-10-18",
+  "scope": "42 public repositories before creation. Metadata does not establish production or quality; seven relevant repositories inspected by pinned revision.",
+  "repositories": [
+    {
+      "name": "ofelipepeixoto",
+      "url": "https://github.com/ofelipepeixoto/ofelipepeixoto",
+      "description": "Perfil profissional de Carlos Felipe | IA, agentes e produtos digitais.",
+      "language": null,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-18T08:20:25Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "assistente-documental-ia",
+      "url": "https://github.com/ofelipepeixoto/assistente-documental-ia",
+      "description": "Protótipo de busca documental com fontes e revisão humana",
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-11T02:46:50Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "agente-aprovacao-humana",
+      "url": "https://github.com/ofelipepeixoto/agente-aprovacao-humana",
+      "description": null,
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-08T14:13:00Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "laboratorio-busca-rag",
+      "url": "https://github.com/ofelipepeixoto/laboratorio-busca-rag",
+      "description": null,
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-16T22:53:41Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "skill-revisao-de-fontes",
+      "url": "https://github.com/ofelipepeixoto/skill-revisao-de-fontes",
+      "description": "Skill autoral para auditar afirmações e evidências",
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-14T20:18:03Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "avaliacao-rag-juridico",
+      "url": "https://github.com/ofelipepeixoto/avaliacao-rag-juridico",
+      "description": "Avaliação reproduzível de busca em contrato fictício",
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-16T22:54:11Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-oaas",
+      "url": "https://github.com/ofelipepeixoto/radar-oaas",
+      "description": "Avaliador experimental de prontidão para projetos Outcome as a Service. Astro, regras explicáveis, evidências, custos e próximos experimentos.",
+      "language": "TypeScript",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-11T15:32:37Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "hermes-leilao-rj",
+      "url": "https://github.com/ofelipepeixoto/hermes-leilao-rj",
+      "description": "MVP experimental para análise de leilões imobiliários: evidências, triagem, MAO e revisão humana. Sem execução de lances ou transações.",
+      "language": "TypeScript",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-11T15:43:34Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "TradingAgents",
+      "url": "https://github.com/ofelipepeixoto/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-01T13:06:28Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "LibreChat",
+      "url": "https://github.com/ofelipepeixoto/LibreChat",
+      "description": "Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting. Active",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-01T13:34:26Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-video-studio",
+      "url": "https://github.com/ofelipepeixoto/radar-video-studio",
+      "description": null,
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-01T15:18:07Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-integration-hub",
+      "url": "https://github.com/ofelipepeixoto/radar-integration-hub",
+      "description": "Laboratório autoral de integrações governadas para o ecossistema Radar: consultas CRM, adaptador Nango opcional e avaliação técnica.",
+      "language": "JavaScript",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T22:30:56Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-evidence-kit",
+      "url": "https://github.com/ofelipepeixoto/radar-evidence-kit",
+      "description": "Biblioteca autoral experimental de contratos de evidência, recibos com checkpoint externo e integração simbólica opcional com Semantica. MIT — Carlos Felipe.",
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-11T01:04:57Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-model-router",
+      "url": "https://github.com/ofelipepeixoto/radar-model-router",
+      "description": "Roteamento local e governado de modelos para o ecossistema Radar, com testes, orçamento persistente e política MIT atribuída.",
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T18:45:41Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "capital-web3-advisor",
+      "url": "https://github.com/ofelipepeixoto/capital-web3-advisor",
+      "description": "Capital Web3: base de testes para consultoria DeFi, revisão humana e portal privado de diagnósticos.",
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T22:18:47Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "camaleao-infra-portal",
+      "url": "https://github.com/ofelipepeixoto/camaleao-infra-portal",
+      "description": "Agência Camaleão: plano e referência offline de portal de diagnóstico, implantação e operação de infraestrutura de IA com OpenAI, MCP, n8n e Sites.",
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T22:07:47Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "camaleao-portal",
+      "url": "https://github.com/ofelipepeixoto/camaleao-portal",
+      "description": "Portal autoral da Agência Camaleão: pedidos guiados, Supabase e triagem n8n. Entrega A em revisão, sem implantação de produção.",
+      "language": "TypeScript",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T22:19:08Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "VulnClaw",
+      "url": "https://github.com/ofelipepeixoto/VulnClaw",
+      "description": "基于 AI Agent + MCP 工具链 + 渗透 Skill 编排， 配合大语言模型， 自然语言输入 → 自动完成「信息收集 → 漏洞发现 → 漏洞利用 → 报告生成」全流程。",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-17T22:31:54Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "rea",
+      "url": "https://github.com/ofelipepeixoto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-13T15:26:17Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "reverse-skill",
+      "url": "https://github.com/ofelipepeixoto/reverse-skill",
+      "description": "Reverse Engineering / Authorized Penetration Testing / Security Research Skill Router Pack AI-powered routing + On-demand toolchain bootstrapping + Self-evolving knowledge base  Supports Claude Code, Kiro, Cursor, Cline, and other AI coding clients 逆向/渗透/安全技能路由包 - AI 自动路由 + 按需自举工具链 + 自动进化经验库 | 支持 Claude Code / Kiro / Cursor / Cline 等代码 AI 客户端",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-13T18:19:01Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "creator-lab",
+      "url": "https://github.com/ofelipepeixoto/creator-lab",
+      "description": "Research Instagram Reel scripts with Apify, Jev, and Fireworks or Groq. Bring your own keys, compare hooks, and record the patterns.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-13T16:22:59Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-agent-observatory",
+      "url": "https://github.com/ofelipepeixoto/radar-agent-observatory",
+      "description": "Visualizador experimental autoral de recibos sintéticos, somente leitura; sem agentes ou telemetria real.",
+      "language": null,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-13T16:47:02Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "habblaud",
+      "url": "https://github.com/ofelipepeixoto/habblaud",
+      "description": null,
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-13T16:48:53Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "automaton",
+      "url": "https://github.com/ofelipepeixoto/automaton",
+      "description": "The first AI that can earn its own existence, replicate, and evolve — without needing a human",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-13T16:53:36Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "VoiceStudio",
+      "url": "https://github.com/ofelipepeixoto/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T15:37:38Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "openreply",
+      "url": "https://github.com/ofelipepeixoto/openreply",
+      "description": "The open-source Manychat alternative",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T15:57:51Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "MoneyPrinterTurbo",
+      "url": "https://github.com/ofelipepeixoto/MoneyPrinterTurbo",
+      "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T15:45:18Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "security-workbench",
+      "url": "https://github.com/ofelipepeixoto/security-workbench",
+      "description": "Plataforma experimental de análise estática de repositórios GitHub autorizados, com evidências, revisão humana, relatórios e histórico.",
+      "language": "JavaScript",
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T21:56:29Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "open-seo",
+      "url": "https://github.com/ofelipepeixoto/open-seo",
+      "description": "Open source alternative to Semrush and Ahrefs",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T17:39:45Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "no-ai-slop",
+      "url": "https://github.com/ofelipepeixoto/no-ai-slop",
+      "description": "Removes 20+ patterns of AI slop from any piece of writing.",
+      "language": "Python",
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T17:55:29Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "diagram-design",
+      "url": "https://github.com/ofelipepeixoto/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T20:17:58Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "scientific-agent-skills",
+      "url": "https://github.com/ofelipepeixoto/scientific-agent-skills",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-12T09:43:31Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "awesome-harness-engineering",
+      "url": "https://github.com/ofelipepeixoto/awesome-harness-engineering",
+      "description": "A curated list of awesome harness engineering frameworks, libraries, tools and resources. 🛠️ 80+ repos covering agent harnesses, evaluation frameworks, CI/CD platforms & more",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T20:18:06Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "browser-use",
+      "url": "https://github.com/ofelipepeixoto/browser-use",
+      "description": "Agents that use the browser.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T20:18:36Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "OpenViking",
+      "url": "https://github.com/ofelipepeixoto/OpenViking",
+      "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T14:03:52Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "Agent-Memory",
+      "url": "https://github.com/ofelipepeixoto/Agent-Memory",
+      "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T20:24:18Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "anthropic-cybersecurity-skills",
+      "url": "https://github.com/ofelipepeixoto/anthropic-cybersecurity-skills",
+      "description": "734+ structured cybersecurity skills for AI agents · MITRE ATT&CK mapped · agentskills.io standard · Claude Code, Copilot, Codex CLI, Cursor, Gemini CLI",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-14T20:18:58Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "auditoria-seguranca-supabase",
+      "url": "https://github.com/ofelipepeixoto/auditoria-seguranca-supabase",
+      "description": "Roteiro completo de auditoria de segurança para projetos Supabase (RLS, Edge Functions, Storage, páginas públicas) — skill para Claude Code, prompts para outras IAs e guia para leigos",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-16T13:21:01Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "llm-legislativo",
+      "url": "https://github.com/ofelipepeixoto/llm-legislativo",
+      "description": "Corpus legislativo brasileiro em larga escala e modelo Transformer causal treinado do zero em PyTorch puro.",
+      "language": null,
+      "fork": true,
+      "archived": false,
+      "pushed_at": "2026-10-16T22:57:07Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-classificador-colab",
+      "url": "https://github.com/ofelipepeixoto/radar-classificador-colab",
+      "description": "Laboratório educacional PT-BR: treine e teste seu próprio classificador LoRA no Google Colab. Em preparação; dados sintéticos, sem validação para atendimento real.",
+      "language": null,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T20:53:34Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "camaleao-marketing-copilot",
+      "url": "https://github.com/ofelipepeixoto/camaleao-marketing-copilot",
+      "description": "Experimento PT-BR para ChatGPT: SEO de snapshots, Search Console e mídia paga por arquivos; métricas rastreáveis e propostas sob revisão humana.",
+      "language": null,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T22:30:39Z",
+      "default_branch": "main"
+    },
+    {
+      "name": "radar-creator-chatgpt",
+      "url": "https://github.com/ofelipepeixoto/radar-creator-chatgpt",
+      "description": "Ponte MCP autoral PT-BR para preparar briefs audiovisuais no ChatGPT. Piloto experimental sem geração paga.",
+      "language": null,
+      "fork": false,
+      "archived": false,
+      "pushed_at": "2026-10-17T23:36:55Z",
+      "default_branch": "main"
+    }
+  ]
+}

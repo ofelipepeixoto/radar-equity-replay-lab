@@ -1,0 +1,11 @@
+test_data_cache_reuses_other_provider_scalar (__main__.SecurityObservations.test_data_cache_reuses_other_provider_scalar) ... ok
+test_fd_pagination_forwards_fake_key_to_different_origin (__main__.SecurityObservations.test_fd_pagination_forwards_fake_key_to_different_origin) ... ok
+test_mandate_name_escapes_default_research_directory (__main__.SecurityObservations.test_mandate_name_escapes_default_research_directory) ... ok
+test_market_cap_uses_attribute_absent_from_facts_schema (__main__.SecurityObservations.test_market_cap_uses_attribute_absent_from_facts_schema) ... ok
+test_predictable_atomic_temp_follows_symlink (__main__.SecurityObservations.test_predictable_atomic_temp_follows_symlink) ... ok
+test_snapshot_trusts_provider_future_filing_rows (__main__.SecurityObservations.test_snapshot_trusts_provider_future_filing_rows) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.035s
+
+OK

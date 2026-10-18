@@ -1,0 +1,253 @@
+{
+  "tool": "pip-audit 2.10.1",
+  "service": "PyPI advisory service (default)",
+  "query_date_utc": "2026-10-18",
+  "locked_packages_queried": 108,
+  "packages_with_alerts": 8,
+  "raw_advisory_records": 18,
+  "distinct_advisory_ids": 13,
+  "exploitation_not_confirmed": true,
+  "rows": [
+    {
+      "package": "black",
+      "version": "23.12.1",
+      "scope": "development",
+      "raw_records": 4,
+      "distinct_advisory_ids": 3,
+      "advisories": [
+        {
+          "id": "PYSEC-2024-48",
+          "aliases": [
+            "CVE-2024-21503",
+            "GHSA-fj7x-q9j7-g6q6"
+          ],
+          "fix_versions": [
+            "24.3.0"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-fj7x-q9j7-g6q6"
+          ]
+        },
+        {
+          "id": "PYSEC-2026-2121",
+          "aliases": [
+            "GHSA-3936-cmfr-pm3m",
+            "CVE-2026-32274"
+          ],
+          "fix_versions": [
+            "26.3.1"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-3936-cmfr-pm3m"
+          ]
+        },
+        {
+          "id": "PYSEC-2026-2120",
+          "aliases": [
+            "CVE-2026-31900",
+            "GHSA-v53h-f6m7-xcgm"
+          ],
+          "fix_versions": [
+            "26.3.0"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-v53h-f6m7-xcgm"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "langchain-anthropic",
+      "version": "0.3.5",
+      "scope": "runtime/transitive",
+      "raw_records": 1,
+      "distinct_advisory_ids": 1,
+      "advisories": [
+        {
+          "id": "PYSEC-2026-2556",
+          "aliases": [
+            "GHSA-gr75-jv2w-4656",
+            "CVE-2026-55443"
+          ],
+          "fix_versions": [
+            "1.4.6"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-gr75-jv2w-4656"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "langchain-core",
+      "version": "0.3.86",
+      "scope": "runtime/transitive",
+      "raw_records": 3,
+      "distinct_advisory_ids": 2,
+      "advisories": [
+        {
+          "id": "PYSEC-2026-2193",
+          "aliases": [
+            "GHSA-qh6h-p6c9-ff54",
+            "CVE-2026-34070"
+          ],
+          "fix_versions": [
+            "1.2.22"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-qh6h-p6c9-ff54"
+          ]
+        },
+        {
+          "id": "PYSEC-2026-2562",
+          "aliases": [
+            "CVE-2026-26013",
+            "GHSA-2g6r-c272-w58r"
+          ],
+          "fix_versions": [
+            "1.2.11"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-2g6r-c272-w58r"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "langchain-openai",
+      "version": "0.3.35",
+      "scope": "runtime/transitive",
+      "raw_records": 2,
+      "distinct_advisory_ids": 1,
+      "advisories": [
+        {
+          "id": "PYSEC-2026-76",
+          "aliases": [
+            "CVE-2026-41488",
+            "GHSA-r7w7-9xr2-qq2r"
+          ],
+          "fix_versions": [
+            "1.1.14"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-r7w7-9xr2-qq2r"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "multidict",
+      "version": "6.7.1",
+      "scope": "runtime/transitive",
+      "raw_records": 1,
+      "distinct_advisory_ids": 1,
+      "advisories": [
+        {
+          "id": "PYSEC-2026-4244",
+          "aliases": [
+            "CVE-2026-104874",
+            "GHSA-54p9-h82j-f925"
+          ],
+          "fix_versions": [
+            "6.9.1"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-54p9-h82j-f925"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "pytest",
+      "version": "7.4.4",
+      "scope": "development",
+      "raw_records": 2,
+      "distinct_advisory_ids": 1,
+      "advisories": [
+        {
+          "id": "PYSEC-2026-1845",
+          "aliases": [
+            "GHSA-6w46-j5rx-g56g",
+            "CVE-2025-71176"
+          ],
+          "fix_versions": [
+            "9.0.3"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-6w46-j5rx-g56g"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "python-dotenv",
+      "version": "1.0.0",
+      "scope": "runtime/transitive",
+      "raw_records": 2,
+      "distinct_advisory_ids": 1,
+      "advisories": [
+        {
+          "id": "PYSEC-2026-2270",
+          "aliases": [
+            "GHSA-mf9w-mj56-hr94",
+            "CVE-2026-28684"
+          ],
+          "fix_versions": [
+            "1.2.2"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-mf9w-mj56-hr94"
+          ]
+        }
+      ]
+    },
+    {
+      "package": "urllib3",
+      "version": "2.7.0",
+      "scope": "runtime/transitive",
+      "raw_records": 3,
+      "distinct_advisory_ids": 3,
+      "advisories": [
+        {
+          "id": "PYSEC-2026-4177",
+          "aliases": [
+            "GHSA-vxq7-64xx-v4gw",
+            "CVE-2026-97689"
+          ],
+          "fix_versions": [
+            "2.8.0"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-vxq7-64xx-v4gw"
+          ]
+        },
+        {
+          "id": "PYSEC-2026-4176",
+          "aliases": [
+            "GHSA-gh4c-6fx4-qh6g",
+            "CVE-2026-97688"
+          ],
+          "fix_versions": [
+            "2.8.0"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-gh4c-6fx4-qh6g"
+          ]
+        },
+        {
+          "id": "PYSEC-2026-4175",
+          "aliases": [
+            "GHSA-8988-9cw3-xx77",
+            "CVE-2026-97687"
+          ],
+          "fix_versions": [
+            "2.8.0"
+          ],
+          "github_advisories": [
+            "https://github.com/advisories/GHSA-8988-9cw3-xx77"
+          ]
+        }
+      ]
+    }
+  ]
+}
