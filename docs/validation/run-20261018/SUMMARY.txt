@@ -1,0 +1,5 @@
+Local synthetic exercises completed: 4 reports independently verified.
+3 invalid inputs rejected with code 2 and no report; overwrite refused without changing bytes.
+Exact input/output/source hashes and command arguments are in run.json.
+Tests describe this local run, not authenticated dates or absence of hindsight.
+review_status=pending; execution_allowed=false.

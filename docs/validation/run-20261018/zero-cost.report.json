@@ -1,0 +1,120 @@
+{
+  "asset_count": "2",
+  "benchmark": {
+    "costs": {
+      "entry_fee": "0.00000000",
+      "entry_slippage_vs_close": "0.00000000",
+      "exit_fee": "0.00000000",
+      "exit_slippage_vs_close": "0.00000000"
+    },
+    "curve": [
+      {
+        "date": "2026-01-06",
+        "nav": "1000.00000000",
+        "phase": "close_mark",
+        "session_index": "1"
+      },
+      {
+        "date": "2026-01-07",
+        "nav": "1050.00000000",
+        "phase": "close_mark",
+        "session_index": "2"
+      },
+      {
+        "date": "2026-01-08",
+        "nav": "1080.00000000",
+        "phase": "close_mark",
+        "session_index": "3"
+      },
+      {
+        "date": "2026-01-08",
+        "nav": "1080.00000000",
+        "phase": "final_liquidation",
+        "session_index": "3"
+      }
+    ],
+    "final_nav": "1080.00000000",
+    "initial_capital": "1000.00000000",
+    "max_drawdown_pct": "0.00000000",
+    "return_pct": "8.00000000",
+    "unallocated_cash": "0.00000000"
+  },
+  "currency": "BRL",
+  "decision_at": "2026-01-05T21:00:00Z",
+  "evidence_count": "1",
+  "excess_return_percentage_points": "1.00000000",
+  "execute_on": "2026-01-06",
+  "execution_allowed": false,
+  "fee_bps": "0",
+  "first_session": "2026-01-05",
+  "input_sha256": "511257b652bbe231aeecc1777bc7572c01a9683ad7f2c6115dac65c632ed86f5",
+  "last_session": "2026-01-08",
+  "limitations": [
+    "Synthetic educational replay only; no investment recommendation or execution.",
+    "Fixed weights are declared inputs; no decision algorithm or thesis is evaluated.",
+    "Timestamps and synthetic status are declarations, not independently authenticated.",
+    "Fractional units; no rebalancing, dividends, interest, taxes, FX, liquidity or market impact.",
+    "Benchmark invests 100% with identical entry/exit fee and slippage rates.",
+    "Drawdown includes initial capital, entry close mark, later close marks and final liquidation.",
+    "Decimal outputs use half-even rounding to 8 places; internal arithmetic uses 50 significant digits."
+  ],
+  "mode": "synthetic_buy_and_hold_replay",
+  "point_in_time_guard": {
+    "decision_origin_verified": false,
+    "declared_evidence_available_by_decision": true,
+    "entry_session_index": "1",
+    "timestamp_authenticity_verified": false,
+    "uses_future_prices_for_valuation_only": true
+  },
+  "pointers": [
+    "/target_weights",
+    "/sessions/1/prices",
+    "/sessions/1/benchmark_price",
+    "/evidence"
+  ],
+  "portfolio": {
+    "costs": {
+      "entry_fee": "0.00000000",
+      "entry_slippage_vs_close": "0.00000000",
+      "exit_fee": "0.00000000",
+      "exit_slippage_vs_close": "0.00000000"
+    },
+    "curve": [
+      {
+        "date": "2026-01-06",
+        "nav": "1000.00000000",
+        "phase": "close_mark",
+        "session_index": "1"
+      },
+      {
+        "date": "2026-01-07",
+        "nav": "1000.00000000",
+        "phase": "close_mark",
+        "session_index": "2"
+      },
+      {
+        "date": "2026-01-08",
+        "nav": "1090.00000000",
+        "phase": "close_mark",
+        "session_index": "3"
+      },
+      {
+        "date": "2026-01-08",
+        "nav": "1090.00000000",
+        "phase": "final_liquidation",
+        "session_index": "3"
+      }
+    ],
+    "final_nav": "1090.00000000",
+    "initial_capital": "1000.00000000",
+    "max_drawdown_pct": "0.00000000",
+    "return_pct": "9.00000000",
+    "unallocated_cash": "100.00000000"
+  },
+  "price_basis": "synthetic_adjusted_close_no_dividends",
+  "review_status": "pending",
+  "schema": "radar-equity-replay-report/v1",
+  "session_count": "4",
+  "slippage_bps": "0",
+  "synthetic_only": true
+}

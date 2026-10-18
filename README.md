@@ -14,6 +14,29 @@ Abra [o guia](chatgpt/COMECAR.md) e copie [as instruções](chatgpt/INSTRUCOES.m
 
 O guia está preparado; nada foi instalado automaticamente na sua conta. Um link de GitHub não instala código ou concede acesso a contas/pastas. CI e ensaio por agente não substituem a homologação por um segundo operador humano numa conversa nova.
 
+## Caderno visual offline — versão experimental 0.2
+
+Abra o [caderno do replay](docs/demo/replay.html), o [cenário de perda](docs/demo/loss.html)
+ou o [cenário de caixa](docs/demo/cash.html) depois de baixar o repositório.
+No GitHub, arquivos HTML são exibidos como código: eles precisam ser abertos
+localmente no navegador. Não há site ou servidor publicado.
+
+Cada caderno começa com quatro caminhos: entender uma simulação fictícia,
+comparar custos, examinar perdas/drawdown e verificar a cronologia. As tabelas,
+o gráfico e o JSON para download são produzidos pelo motor Python. O navegador
+apenas apresenta o resultado; o conteúdo também funciona sem JavaScript.
+
+Para gerar outro caderno a partir de uma fixture sintética, usando um caminho novo:
+
+```sh
+PYTHONPATH=src python3 -m radar_equity_replay.workbook examples/replay.json --output /tmp/replay-workbook.html
+```
+
+O renderer valida a entrada inteira antes da apresentação, mantém IDs, URLs e
+textos de evidência fora do HTML e compara o mesmo cenário com uma cópia em
+memória sem custos. Um JSON `approved` é recusado; não existe ação financeira
+na interface. [Jornada, estados e aceite de UX](docs/UX.md).
+
 ## Três cenários reproduzíveis
 
 Python3.11+ em Linux/POSIX com controles de arquivo no-follow. CLI Windows não homologado; plataforma incompatível é recusada. Sem dependências runtime de terceiros, credenciais ou configuração `.env`.
@@ -48,7 +71,25 @@ Evidência posterior à decisão é recusada. O código usa preços futuros some
 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
-**30 testes próprios e25testes independentes aprovados.** Testes cobrem T+1, custos por fórmula independente, caixa, benchmark comparável, drawdown, limites/tipos/valores extremos, rejeição de futuro e autoridade, privacidade de texto e IO sem sobrescrita/symlinks. Build wheel local aprovado. A CI executa testes e os três exemplos em Python3.11/3.12; resultados locais e remotos ficam registrados na PR.
+Os testes cobrem T+1, custos por fórmula independente, caixa, benchmark comparável,
+drawdown, limites/tipos/valores extremos, rejeição de futuro e autoridade,
+privacidade de texto, HTML offline e IO sem sobrescrita/symlinks. O total e o
+ambiente efetivamente executados nesta versão estão no
+[relatório de implementação](docs/IMPLEMENTACAO.md). A CI executa a suíte,
+os exemplos, o roteiro independente e a reprodução dos cadernos em Python 3.11/3.12.
+
+Para obter evidência nova, com comandos, versões, códigos de saída e hashes:
+
+```sh
+mkdir -p results
+PYTHONPATH=src python3 tools/run_exercises.py --output-dir results/minha-execucao
+```
+
+`minha-execucao` não pode existir. O roteiro cria quatro relatórios usando a CLI
+original e confere métricas, custos e curvas por frações racionais independentes.
+Também exige a recusa de evidência futura, entrada em T, autoridade no JSON e
+sobrescrita. Ele não autentica as datas nem a ausência de conhecimento futuro.
+O cálculo independente é ferramenta de desenvolvimento, sem dependência runtime.
 
 Não confundir testes do laboratório com os625testes do upstream ou com os testes focais de um patch candidato de rede. O ambiente desta entrega não teve chamada paga, conta de corretora, feed real ou produção.
 
@@ -60,6 +101,7 @@ O `TradingAgents` já possui laboratório de teses/contrapontos; o Capital Web3 
 - [Segurança e limites](SECURITY.md)
 - [Contribuição](CONTRIBUTING.md)
 - [Origem e atribuição](THIRD_PARTY_NOTICES.md)
+- [Fontes anexadas e arquivos acessados](docs/SOURCES.md)
 - [Auditoria em30seções e evidências](https://github.com/ofelipepeixoto/radar-equity-replay-lab/blob/docs/ai-hedge-fund-audit/docs/Relatorio-AI-Hedge-Fund-2026-10-18.md), em PR independente.
 
 Próximos marcos: revisão humana da PR e repetição dos exercícios por outro operador no ChatGPT; comparar números por método independente; só então decidir se há valor para um consumidor do ecossistema. Dados reais, conexão de modelos/feeds, broker, integração e comercialização são etapas separadas, não promessas desta versão.
