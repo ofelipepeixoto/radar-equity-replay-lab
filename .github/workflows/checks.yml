@@ -1,0 +1,29 @@
+name: Synthetic equity replay
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Offline contract tests
+        env:
+          PYTHONPATH: src
+        run: python3 -m unittest discover -s tests -v
+      - name: Three fictitious scenarios
+        env:
+          PYTHONPATH: src
+        run: |
+          python3 -m radar_equity_replay examples/replay.json --output /tmp/equity-replay.json
+          python3 -m radar_equity_replay examples/loss.json --output /tmp/equity-loss.json
+          python3 -m radar_equity_replay examples/cash.json --output /tmp/equity-cash.json

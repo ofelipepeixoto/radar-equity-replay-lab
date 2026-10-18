@@ -1,0 +1,66 @@
+{
+  "schema": "radar-equity-replay-input/v1",
+  "synthetic_only": true,
+  "project_id": "EDUCATIONAL_CASH",
+  "currency": "BRL",
+  "initial_capital": "1000.00",
+  "decision_at": "2026-01-05T21:00:00Z",
+  "execute_on": "2026-01-06",
+  "price_basis": "synthetic_adjusted_close_no_dividends",
+  "assets": [
+    "SYN_A",
+    "SYN_B"
+  ],
+  "target_weights": {
+    "SYN_A": "0",
+    "SYN_B": "0"
+  },
+  "fee_bps": "10",
+  "slippage_bps": "5",
+  "evidence": [
+    {
+      "evidence_id": "E1",
+      "available_at": "2026-01-05T20:00:00Z",
+      "source_url": "https://fixtures.invalid/replay",
+      "text": "Fictional classroom allocation. This is not market information."
+    }
+  ],
+  "sessions": [
+    {
+      "date": "2026-01-05",
+      "available_at": "2026-01-05T20:00:00Z",
+      "prices": {
+        "SYN_A": "1",
+        "SYN_B": "1"
+      },
+      "benchmark_price": "1"
+    },
+    {
+      "date": "2026-01-06",
+      "available_at": "2026-01-06T20:00:00Z",
+      "prices": {
+        "SYN_A": "100",
+        "SYN_B": "50"
+      },
+      "benchmark_price": "100"
+    },
+    {
+      "date": "2026-01-07",
+      "available_at": "2026-01-07T20:00:00Z",
+      "prices": {
+        "SYN_A": "110",
+        "SYN_B": "40"
+      },
+      "benchmark_price": "105"
+    },
+    {
+      "date": "2026-01-08",
+      "available_at": "2026-01-08T20:00:00Z",
+      "prices": {
+        "SYN_A": "120",
+        "SYN_B": "45"
+      },
+      "benchmark_price": "108"
+    }
+  ]
+}
