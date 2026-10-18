@@ -1,0 +1,170 @@
+--- a/hedge_fund/data/client.py
++++ b/hedge_fund/data/client.py
+@@ -5,6 +5,7 @@
+ import logging
+ import os
+ import time
++from urllib.parse import urlsplit
+ 
+ import requests
+ 
+@@ -44,6 +45,7 @@
+ 
+     BASE_URL = "https://api.financialdatasets.ai"
+     _RETRY_DELAYS = (5, 15, 30)
++    MAX_PAGES = 100
+ 
+     def __init__(
+         self,
+@@ -227,8 +229,8 @@
+         """GET and extract *response_key*, following pagination to the end.
+ 
+         The API caps every list response at a fixed page size and links the
+-        remainder via ``next_page_url`` (absolute, self-contained — request
+-        it verbatim, no params). This loop reassembles the full result the
++        remainder via ``next_page_url`` (absolute, self-contained — require
++        the configured HTTPS origin, then request it without extra params). This loop reassembles the full result the
+         caller asked for, so everything above it — including the disk cache,
+         which memoizes the *merged* list — never sees a truncated page.
+ 
+@@ -241,8 +243,15 @@
+         body = resp.json()
+         rows = body.get(response_key)
+         next_page_url = body.get("next_page_url")
++        pages = 1
++        seen: set[str] = set()
+         while next_page_url and isinstance(rows, list):
+-            resp = self._request("GET", next_page_url)
++            safe_url = self._safe_url(next_page_url)
++            if safe_url in seen or pages >= self.MAX_PAGES:
++                raise FDClientError("pagination cycle or page limit exceeded")
++            seen.add(safe_url)
++            pages += 1
++            resp = self._request("GET", safe_url)
+             if resp is None:
+                 break
+             body = resp.json()
+@@ -250,6 +259,24 @@
+             next_page_url = body.get("next_page_url")
+         return rows
+ 
++    def _safe_url(self, path: str) -> str:
++        """Confine every credential-bearing request to the exact HTTPS origin."""
++        if not isinstance(path, str) or not path or "\\" in path or any(ord(c) <= 32 or ord(c) == 127 for c in path):
++            raise FDClientError("invalid provider URL")
++        url = self.BASE_URL + path if path.startswith("/") and not path.startswith("//") else path
++        try:
++            parsed, base = urlsplit(url), urlsplit(self.BASE_URL)
++            safe = (parsed.scheme == base.scheme == "https"
++                    and parsed.hostname == base.hostname
++                    and (parsed.port or 443) == (base.port or 443)
++                    and parsed.username is None and parsed.password is None
++                    and not parsed.fragment)
++        except ValueError:
++            safe = False
++        if not safe:
++            raise FDClientError("provider URL must use the configured HTTPS origin")
++        return url
++
+     def _request(
+         self,
+         method: str,
+@@ -265,9 +292,11 @@
+         (missing data reads as "no signal").
+ 
+         *path* may be an absolute URL (a ``next_page_url`` from a previous
+-        response), which is requested verbatim.
+-        """
+-        url = path if path.startswith("http") else self.BASE_URL + path
++        response), which is accepted only on the configured HTTPS origin.
++        """
++        url = self._safe_url(path)
++        # Provider redirects must never carry the session API key elsewhere.
++        kwargs["allow_redirects"] = False
+         for attempt, delay in enumerate((*self._RETRY_DELAYS, None)):
+             try:
+                 resp = self._session.request(
+@@ -286,6 +315,10 @@
+                 time.sleep(delay)
+                 continue
+ 
++            if 300 <= resp.status_code < 400:
++                raise FDClientError("provider redirects are not permitted",
++                                    status_code=resp.status_code, path=path)
++
+             if resp.status_code == 404:
+                 return None
+ 
+--- /dev/null
++++ b/hedge_fund/data/test_audit_fd_guard.py
+@@ -0,0 +1,70 @@
++# Original regression tests, MIT License, Copyright (c) 2026 Carlos Felipe.
++"""Focused regression tests for the candidate FD patch; mocks only."""
++import json
++import unittest
++from unittest.mock import patch
++
++import requests
++from hedge_fund.data.client import FDClient, FDClientError
++
++
++def response(body=None, status=200):
++    result = requests.Response()
++    result.status_code = status
++    result._content = json.dumps(body or {}).encode()
++    return result
++
++
++class FDGuardTests(unittest.TestCase):
++    def test_foreign_pagination_refused_before_second_request(self):
++        with FDClient(api_key='synthetic-key') as client:
++            with patch.object(client._session, 'request', return_value=response({'rows': [], 'next_page_url': 'https://foreign.invalid/page'})) as transport:
++                with self.assertRaises(FDClientError):
++                    client._get('/synthetic/', {}, 'rows')
++                self.assertEqual(transport.call_count, 1)
++
++    def test_same_origin_pagination_works(self):
++        replies = [response({'rows': [1], 'next_page_url': 'https://api.financialdatasets.ai/page2'}), response({'rows': [2]})]
++        with FDClient(api_key='synthetic-key') as client:
++            with patch.object(client._session, 'request', side_effect=replies) as transport:
++                self.assertEqual(client._get('/synthetic/', {}, 'rows'), [1, 2])
++                self.assertEqual(transport.call_count, 2)
++                self.assertTrue(all(c.kwargs['allow_redirects'] is False for c in transport.call_args_list))
++
++    def test_redirect_refused(self):
++        with FDClient(api_key='synthetic-key') as client:
++            with patch.object(client._session, 'request', return_value=response(status=302)) as transport:
++                with self.assertRaises(FDClientError):
++                    client._request('GET', '/synthetic/')
++                transport.assert_called_once()
++                self.assertFalse(transport.call_args.kwargs['allow_redirects'])
++
++    def test_pagination_cycle_refused(self):
++        reply = response({'rows': [], 'next_page_url': 'https://api.financialdatasets.ai/repeat'})
++        with FDClient(api_key='synthetic-key') as client:
++            with patch.object(client._session, 'request', return_value=reply) as transport:
++                with self.assertRaises(FDClientError):
++                    client._get('/synthetic/', {}, 'rows')
++                self.assertEqual(transport.call_count, 2)
++
++    def test_page_limit_refused(self):
++        replies = [response({'rows': [], 'next_page_url': 'https://api.financialdatasets.ai/page2'}), response({'rows': [], 'next_page_url': 'https://api.financialdatasets.ai/page3'})]
++        with FDClient(api_key='synthetic-key') as client:
++            client.MAX_PAGES = 2
++            with patch.object(client._session, 'request', side_effect=replies) as transport:
++                with self.assertRaises(FDClientError):
++                    client._get('/synthetic/', {}, 'rows')
++                self.assertEqual(transport.call_count, 2)
++
++    def test_unsafe_urls_never_reach_transport(self):
++        paths = ['http://api.financialdatasets.ai/page', '//foreign.invalid/page', 'https://api.financialdatasets.ai.evil.invalid/page', 'https://api.financialdatasets.ai:444/page', 'https://user:pass@api.financialdatasets.ai/page', 'https://api.financialdatasets.ai/page#fragment', 'https://api.financialdatasets.ai\\@foreign.invalid/page', 'https://api.financialdatasets.ai/page\nX-Test: yes']
++        with FDClient(api_key='synthetic-key') as client:
++            with patch.object(client._session, 'request') as transport:
++                for path in paths:
++                    with self.subTest(path=path), self.assertRaises(FDClientError):
++                        client._request('GET', path)
++                transport.assert_not_called()
++
++
++if __name__ == '__main__':
++    unittest.main(verbosity=2)

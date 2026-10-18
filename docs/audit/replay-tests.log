@@ -1,0 +1,35 @@
+test_cli_argument_errors_do_not_echo_unknown_values (test_replay.FileTests.test_cli_argument_errors_do_not_echo_unknown_values) ... ok
+test_cli_success_generic_failure_no_overwrite (test_replay.FileTests.test_cli_success_generic_failure_no_overwrite) ... ok
+test_exclusive_output_and_permissions (test_replay.FileTests.test_exclusive_output_and_permissions) ... ok
+test_regular_bounded_no_traversal (test_replay.FileTests.test_regular_bounded_no_traversal) ... ok
+test_symlinks_in_input_output_and_parents (test_replay.FileTests.test_symlinks_in_input_output_and_parents) ... ok
+test_unsupported_platform_and_missing_no_follow_fail_closed (test_replay.FileTests.test_unsupported_platform_and_missing_no_follow_fail_closed) ... ok
+test_all_shipped_examples (test_replay.ReplayTests.test_all_shipped_examples) ... ok
+test_asset_and_session_count_bounds (test_replay.ReplayTests.test_asset_and_session_count_bounds) ... ok
+test_benchmark_full_capital_same_timing_and_costs (test_replay.ReplayTests.test_benchmark_full_capital_same_timing_and_costs) ... ok
+test_capital_currency_basis_costs_bounds (test_replay.ReplayTests.test_capital_currency_basis_costs_bounds) ... ok
+test_cash_zero_cost_hand_calculation (test_replay.ReplayTests.test_cash_zero_cost_hand_calculation) ... ok
+test_dates_order_available_coherence (test_replay.ReplayTests.test_dates_order_available_coherence) ... ok
+test_decimal_context_is_independent_of_caller (test_replay.ReplayTests.test_decimal_context_is_independent_of_caller) ... ok
+test_decision_window (test_replay.ReplayTests.test_decision_window) ... ok
+test_drawdown_includes_costs_and_initial_capital (test_replay.ReplayTests.test_drawdown_includes_costs_and_initial_capital) ... ok
+test_encoding_duplicate_keys_nesting_controls (test_replay.ReplayTests.test_encoding_duplicate_keys_nesting_controls) ... ok
+test_every_session_same_universe_exact_keys (test_replay.ReplayTests.test_every_session_same_universe_exact_keys) ... ok
+test_evidence_bounds_ids_url_text (test_replay.ReplayTests.test_evidence_bounds_ids_url_text) ... ok
+test_execute_on_second_session (test_replay.ReplayTests.test_execute_on_second_session) ... ok
+test_extreme_valid_prices_and_capital_remain_finite (test_replay.ReplayTests.test_extreme_valid_prices_and_capital_remain_finite) ... ok
+test_future_evidence_rejected (test_replay.ReplayTests.test_future_evidence_rejected) ... ok
+test_json_numeric_tokens_and_nonfinite_values (test_replay.ReplayTests.test_json_numeric_tokens_and_nonfinite_values) ... ok
+test_nonzero_costs_paid_from_allocation (test_replay.ReplayTests.test_nonzero_costs_paid_from_allocation) ... ok
+test_prices_positive_bounded_decimal_strings (test_replay.ReplayTests.test_prices_positive_bounded_decimal_strings) ... ok
+test_raw_hash_determinism_privacy (test_replay.ReplayTests.test_raw_hash_determinism_privacy) ... ok
+test_t_plus_one_ignores_decision_close_for_entry (test_replay.ReplayTests.test_t_plus_one_ignores_decision_close_for_entry) ... ok
+test_valid_maximum_session_count (test_replay.ReplayTests.test_valid_maximum_session_count) ... ok
+test_valid_twenty_asset_universe (test_replay.ReplayTests.test_valid_twenty_asset_universe) ... ok
+test_weight_universe_and_no_leverage (test_replay.ReplayTests.test_weight_universe_and_no_leverage) ... ok
+test_zero_allocation_retains_cash (test_replay.ReplayTests.test_zero_allocation_retains_cash) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.128s
+
+OK

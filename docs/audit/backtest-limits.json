@@ -1,0 +1,27 @@
+{
+  "synthetic_only": true,
+  "observations": [
+    {
+      "observation": "legacy_same_close_entry",
+      "signal_as_of": "2024-01-02 close",
+      "entry_date": "2024-01-02",
+      "entry_price": 100.0,
+      "next_close": 110.0,
+      "scope": "BacktestEngine.run_alpha; not backtest_fund"
+    },
+    {
+      "observation": "legacy_equity_curve_uses_input_order",
+      "entry_sorted_curve": [
+        1000,
+        1100.0,
+        900.0
+      ],
+      "exit_sorted_curve": [
+        1000,
+        800.0,
+        900.0
+      ],
+      "scope": "legacy private helper; run_alpha sorts trades by entry_date before calling it; neither curve is daily mark-to-market"
+    }
+  ]
+}

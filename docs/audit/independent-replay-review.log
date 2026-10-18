@@ -1,0 +1,30 @@
+test_decision_after_entry_price_available_rejected (__main__.IndependentContract.test_decision_after_entry_price_available_rejected) ... ok
+test_duplicate_json_keys_rejected (__main__.IndependentContract.test_duplicate_json_keys_rejected) ... ok
+test_evidence_after_decision_rejected (__main__.IndependentContract.test_evidence_after_decision_rejected) ... ok
+test_external_source_and_query_rejected (__main__.IndependentContract.test_external_source_and_query_rejected) ... ok
+test_invalid_dates_and_zero_price_rejected (__main__.IndependentContract.test_invalid_dates_and_zero_price_rejected) ... ok
+test_no_authority_in_output (__main__.IndependentContract.test_no_authority_in_output) ... ok
+test_numeric_and_nonfinite_json_rejected (__main__.IndependentContract.test_numeric_and_nonfinite_json_rejected) ... ok
+test_overlarge_raw_and_deep_object_rejected (__main__.IndependentContract.test_overlarge_raw_and_deep_object_rejected) ... ok
+test_private_identifiers_text_and_urls_not_echoed (__main__.IndependentContract.test_private_identifiers_text_and_urls_not_echoed) ... ok
+test_weight_over_one_and_short_rejected (__main__.IndependentContract.test_weight_over_one_and_short_rejected) ... ok
+test_wrong_entry_session_rejected (__main__.IndependentContract.test_wrong_entry_session_rejected) ... ok
+test_existing_output_not_overwritten (__main__.IndependentFilesystem.test_existing_output_not_overwritten) ... ok
+test_fifo_directory_and_oversize_rejected (__main__.IndependentFilesystem.test_fifo_directory_and_oversize_rejected) ... ok
+test_private_mode_and_roundtrip (__main__.IndependentFilesystem.test_private_mode_and_roundtrip) ... ok
+test_symlink_input_output_and_parent_rejected (__main__.IndependentFilesystem.test_symlink_input_output_and_parent_rejected) ... ok
+test_exit_friction_in_drawdown (__main__.IndependentMathematics.test_exit_friction_in_drawdown) ... ok
+test_extreme_valid_values_remain_finite (__main__.IndependentMathematics.test_extreme_valid_values_remain_finite) ... ok
+test_first_price_change_does_not_change_entry_result (__main__.IndependentMathematics.test_first_price_change_does_not_change_entry_result) ... ok
+test_flat_prices_and_no_cost_equal_zero (__main__.IndependentMathematics.test_flat_prices_and_no_cost_equal_zero) ... ok
+test_half_allocation_cash_not_reinvested (__main__.IndependentMathematics.test_half_allocation_cash_not_reinvested) ... ok
+test_identical_benchmark_same_costs_same_results (__main__.IndependentMathematics.test_identical_benchmark_same_costs_same_results) ... ok
+test_peak_to_trough_not_initial_only (__main__.IndependentMathematics.test_peak_to_trough_not_initial_only) ... ok
+test_roundtrip_costs_independent_closed_form (__main__.IndependentMathematics.test_roundtrip_costs_independent_closed_form) ... ok
+test_second_session_entry_avoids_first_price_profit (__main__.IndependentMathematics.test_second_session_entry_avoids_first_price_profit) ... ok
+test_zero_allocation_stays_cash_with_no_asset_cost (__main__.IndependentMathematics.test_zero_allocation_stays_cash_with_no_asset_cost) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.014s
+
+OK
