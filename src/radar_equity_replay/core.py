@@ -103,7 +103,9 @@ def _source(value):
     try:
         parsed = urlsplit(value)
         hostname = parsed.hostname or ""
-        if parsed.scheme != "https" or not hostname.endswith(".invalid") or hostname == ".invalid" or parsed.username is not None or parsed.password is not None or parsed.port is not None or parsed.query or parsed.fragment:
+        # urlsplit normalizes an empty port/query/fragment to None or "".
+        # Check their delimiters as well: the contract forbids their presence.
+        if parsed.scheme != "https" or not hostname.endswith(".invalid") or hostname == ".invalid" or parsed.username is not None or parsed.password is not None or ":" in parsed.netloc or "?" in value or "#" in value:
             _reject()
         if not re.fullmatch(r"(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+invalid", hostname):
             _reject()

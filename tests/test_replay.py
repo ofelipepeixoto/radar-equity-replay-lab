@@ -149,6 +149,15 @@ class ReplayTests(unittest.TestCase):
             with self.subTest(length=len(raw)): self.reject(raw=raw)
         for text in ('bad\nline','\ud800','bad\u202evalue','\x00','\x7f'):
             self.value['evidence'][0]['text']=text; self.reject()
+    def test_evidence_url_forbids_empty_port_query_and_fragment(self):
+        for url in ('https://x.invalid/?', 'https://x.invalid/#',
+                    'https://x.invalid:', 'https://x.invalid:/ok',
+                    'https://x.invalid:?#', 'https://x.invalid:443/path'):
+            with self.subTest(url=url):
+                self.value['evidence'][0]['source_url']=url
+                self.reject()
+        self.value['evidence'][0]['source_url']='https://x.invalid/path%3F%23'
+        self.assertEqual(analyze(encoded(self.value))['review_status'], 'pending')
     def test_all_shipped_examples(self):
         for path in FIXTURE.parent.glob('*.json'):
             with self.subTest(example=path.name):
