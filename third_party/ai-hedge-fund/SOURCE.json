@@ -1,0 +1,19 @@
+{
+  "observed_on": "2026-10-18",
+  "repository": "https://github.com/virattt/ai-hedge-fund",
+  "commit": "78b779c1389e2d1452dc29606d2c4126d859b964",
+  "version": "2.5.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 Virat Singh",
+  "runtime_copied": false,
+  "patterns_studied": [
+    "hedge_fund/pipeline/session.py",
+    "hedge_fund/features/snapshot.py",
+    "hedge_fund/risk/limits.py",
+    "hedge_fund/backtesting/fund.py"
+  ],
+  "limitations": [
+    "No upstream model, dataset, API key, investor persona, broker or runtime script incorporated.",
+    "Any upstream patch under docs/audit is a review artifact, not the application runtime."
+  ]
+}
